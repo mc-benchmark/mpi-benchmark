@@ -1,0 +1,13 @@
+channel D0_0 1;
+channel D0_1 1;
+channel D0_2 1;
+channel D1_0 1;
+channel D2_0 1;
+channel D3_0 1;
+channel D3_1 1;
+P0=(D0_0!0->Skip); (D0_1!0->Skip); (D0_2!0->Skip); (D1_0?0->Skip [] D2_0?0->Skip [] D3_0?0->Skip); (D1_0?0->Skip [] D2_0?0->Skip [] D3_0?0->Skip [] [call(cempty,D3_0)]D3_1?0->Skip); (D1_0?0->Skip [] D2_0?0->Skip [] D3_0?0->Skip [] [call(cempty,D3_0)]D3_1?0->Skip); (D1_0?0->Skip [] D2_0?0->Skip [] D3_0?0->Skip [] [call(cempty,D3_0)]D3_1?0->Skip);
+P1=(D0_0?0->Skip); (D1_0!0->Skip); 
+P2=(D0_1?0->Skip); (D2_0!0->Skip); 
+P3=(D0_2?0->Skip); (D3_0!0->Skip); (D3_1!0->Skip); 
+P=P0||P1||P2||P3;
+#assert P deadlockfree;

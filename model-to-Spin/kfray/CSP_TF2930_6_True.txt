@@ -1,0 +1,4 @@
+P0=ISend(1,1,469842208);ISend(2,1,469848160);ISend(3,1,469857408);ISend(1,1,469905088);ISend(2,1,469911104);ISend(3,1,469917120);ISend(1,1,469923136);ISend(2,1,469929152);ISend(3,1,469935168);ISend(1,1,469941184);ISend(1,0,469947200);ISend(2,0,469953024);ISend(3,0,469958848);Recv(*,1);Recv(*,2);Recv(*,1);Recv(*,2);Recv(*,1);Recv(*,2);Recv(*,1);Recv(*,2);Recv(*,1);Recv(*,2);Recv(*,1);Recv(*,2);Recv(*,1);Recv(*,2);Recv(*,1);Recv(*,2);Recv(*,1);Recv(*,2);Recv(*,1);Recv(*,2);
+P1=Recv(0,*);Ssend(0,1);Ssend(0,2);Recv(0,*);Ssend(0,1);Ssend(0,2);Recv(0,*);Ssend(0,1);Ssend(0,2);Recv(0,*);Ssend(0,1);Ssend(0,2);Recv(0,*);
+P2=Recv(0,*);Ssend(0,1);Ssend(0,2);Recv(0,*);Ssend(0,1);Ssend(0,2);Recv(0,*);Ssend(0,1);Ssend(0,2);Recv(0,*);
+P3=Recv(0,*);Ssend(0,1);Ssend(0,2);Recv(*,*);Ssend(0,1);Ssend(0,2);Recv(0,*);Ssend(0,1);Ssend(0,2);Recv(*,*);

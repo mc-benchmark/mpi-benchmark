@@ -1,0 +1,4 @@
+P0=Barrier;Barrier;ISend(1,200,841156928);ISend(2,200,841163136);ISend(3,200,841172640);Recv(*,200);Barrier;Barrier;Barrier;Barrier;ISend(1,32771,842785536);ISend(2,32771,842790912);ISend(3,32771,842796288);
+P1=Barrier;Barrier;Recv(*,200);ISend(0,200,841500640);ISend(2,200,841506848);ISend(3,200,841516352);Barrier;Barrier;Barrier;Barrier;Recv(0,32771);
+P2=Barrier;Barrier;Recv(*,200);Recv(*,200);Barrier;Barrier;Barrier;Barrier;Recv(0,32771);
+P3=Barrier;Barrier;Recv(*,200);Recv(*,200);Barrier;Barrier;Barrier;Barrier;Recv(0,32771);

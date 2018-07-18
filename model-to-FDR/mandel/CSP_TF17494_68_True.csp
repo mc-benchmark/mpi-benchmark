@@ -1,0 +1,231 @@
+channel D0_0_in
+channel D0_0_out
+channel d0_0_in
+channel X0_0_in
+channel D0_1_in
+channel D0_1_out
+channel d0_1_in
+channel X0_1_in
+channel D0_2_in
+channel D0_2_out
+channel d0_2_in
+channel X0_2_in
+channel D0_3_in
+channel D0_3_out
+channel d0_3_in
+channel X0_3_in
+channel D0_4_in
+channel D0_4_out
+channel d0_4_in
+channel X0_4_in
+channel D0_5_in
+channel D0_5_out
+channel d0_5_in
+channel X0_5_in
+channel D0_6_in
+channel D0_6_out
+channel d0_6_in
+channel X0_6_in
+channel D0_7_in
+channel D0_7_out
+channel d0_7_in
+channel X0_7_in
+channel D0_8_in
+channel D0_8_out
+channel d0_8_in
+channel X0_8_in
+channel D0_9_in
+channel D0_9_out
+channel d0_9_in
+channel X0_9_in
+channel D0_10_in
+channel D0_10_out
+channel d0_10_in
+channel X0_10_in
+channel D1_0_in
+channel D1_0_out
+channel d1_0_in
+channel X1_0_in
+channel D1_1_in
+channel D1_1_out
+channel d1_1_in
+channel X1_1_in
+channel D2_0_in
+channel D2_0_out
+channel d2_0_in
+channel X2_0_in
+channel D3_0_in
+channel D3_0_out
+channel d3_0_in
+channel X3_0_in
+channel D4_0_in
+channel D4_0_out
+channel d4_0_in
+channel X4_0_in
+channel D5_0_in
+channel D5_0_out
+channel d5_0_in
+channel X5_0_in
+channel S0_11_in
+channel S0_11_out
+channel S0_12_in
+channel S0_12_out
+channel S0_13_in
+channel S0_13_out
+channel S0_14_in
+channel S0_14_out
+channel S0_15_in
+channel S0_15_out
+channel S0_16_in
+channel S0_16_out
+channel S1_0_in
+channel S1_0_out
+channel S1_2_in
+channel S1_2_out
+channel S1_4_in
+channel S1_4_out
+channel S2_0_in
+channel S2_0_out
+channel S2_2_in
+channel S2_2_out
+channel S3_0_in
+channel S3_0_out
+channel S3_2_in
+channel S3_2_out
+channel S4_0_in
+channel S4_0_out
+channel S4_2_in
+channel S4_2_out
+channel S5_0_in
+channel S5_0_out
+channel S5_2_in
+channel S5_2_out
+channel B0
+channel d1_0_out_1
+channel X1_0_out_1
+channel d0_0_out_5
+channel X0_0_out_5
+channel d0_5_out_6
+channel X0_5_out_6
+channel d0_1_out_7
+channel X0_1_out_7
+channel d0_2_out_8
+channel X0_2_out_8
+channel d0_3_out_9
+channel X0_3_out_9
+channel d0_4_out_10
+channel X0_4_out_10
+
+skip_loop = SKIP; skip_loop
+d1_0_out_skip_loop = SKIP [] (d1_0_out_1 -> SKIP); d1_0_out_skip_loop
+d0_0_out_skip_loop = SKIP [] (d0_0_out_5 -> SKIP); d0_0_out_skip_loop
+d0_5_out_skip_loop = SKIP [] (d0_5_out_6 -> SKIP); d0_5_out_skip_loop
+d0_1_out_skip_loop = SKIP [] (d0_1_out_7 -> SKIP); d0_1_out_skip_loop
+d0_2_out_skip_loop = SKIP [] (d0_2_out_8 -> SKIP); d0_2_out_skip_loop
+d0_3_out_skip_loop = SKIP [] (d0_3_out_9 -> SKIP); d0_3_out_skip_loop
+d0_4_out_skip_loop = SKIP [] (d0_4_out_10 -> SKIP); d0_4_out_skip_loop
+X1_0(0) = SKIP [] (X1_0_in -> SKIP; (SKIP [] X1_0_out_1 -> SKIP))
+X0_0(0) = SKIP [] (X0_0_in -> SKIP; (SKIP [] X0_0_out_5 -> SKIP))
+X0_5(0) = SKIP [] (X0_5_in -> SKIP; (SKIP [] X0_5_out_6 -> SKIP))
+X0_1(0) = SKIP [] (X0_1_in -> SKIP; (SKIP [] X0_1_out_7 -> SKIP))
+X0_2(0) = SKIP [] (X0_2_in -> SKIP; (SKIP [] X0_2_out_8 -> SKIP))
+X0_3(0) = SKIP [] (X0_3_in -> SKIP; (SKIP [] X0_3_out_9 -> SKIP))
+X0_4(0) = SKIP [] (X0_4_in -> SKIP; (SKIP [] X0_4_out_10 -> SKIP))
+
+T0 = (D1_0_out -> d1_0_in -> X1_0_in -> SKIP [] (d1_0_out_1 -> SKIP; T0) [] X1_0_out_1 -> D1_1_out -> d1_1_in -> X1_1_in -> SKIP [] D2_0_out -> d2_0_in -> X2_0_in -> SKIP [] D3_0_out -> d3_0_in -> X3_0_in -> SKIP [] D4_0_out -> d4_0_in -> X4_0_in -> SKIP [] D5_0_out -> d5_0_in -> X5_0_in -> SKIP)
+T1 = (D1_0_out -> d1_0_in -> X1_0_in -> SKIP [] (d1_0_out_1 -> SKIP; T1) [] X1_0_out_1 -> D1_1_out -> d1_1_in -> X1_1_in -> SKIP [] D2_0_out -> d2_0_in -> X2_0_in -> SKIP [] D3_0_out -> d3_0_in -> X3_0_in -> SKIP [] D4_0_out -> d4_0_in -> X4_0_in -> SKIP [] D5_0_out -> d5_0_in -> X5_0_in -> SKIP)
+T2 = (D1_0_out -> d1_0_in -> X1_0_in -> SKIP [] (d1_0_out_1 -> SKIP; T2) [] X1_0_out_1 -> D1_1_out -> d1_1_in -> X1_1_in -> SKIP [] D2_0_out -> d2_0_in -> X2_0_in -> SKIP [] D3_0_out -> d3_0_in -> X3_0_in -> SKIP [] D4_0_out -> d4_0_in -> X4_0_in -> SKIP [] D5_0_out -> d5_0_in -> X5_0_in -> SKIP)
+T3 = (D1_0_out -> d1_0_in -> X1_0_in -> SKIP [] (d1_0_out_1 -> SKIP; T3) [] X1_0_out_1 -> D1_1_out -> d1_1_in -> X1_1_in -> SKIP [] D2_0_out -> d2_0_in -> X2_0_in -> SKIP [] D3_0_out -> d3_0_in -> X3_0_in -> SKIP [] D4_0_out -> d4_0_in -> X4_0_in -> SKIP [] D5_0_out -> d5_0_in -> X5_0_in -> SKIP)
+T4 = (D1_0_out -> d1_0_in -> X1_0_in -> SKIP [] (d1_0_out_1 -> SKIP; T4) [] X1_0_out_1 -> D1_1_out -> d1_1_in -> X1_1_in -> SKIP [] D2_0_out -> d2_0_in -> X2_0_in -> SKIP [] D3_0_out -> d3_0_in -> X3_0_in -> SKIP [] D4_0_out -> d4_0_in -> X4_0_in -> SKIP [] D5_0_out -> d5_0_in -> X5_0_in -> SKIP)
+T5 = (D0_0_out -> d0_0_in -> X0_0_in -> SKIP [] (d0_0_out_5 -> SKIP; T5) [] X0_0_out_5 -> D0_5_out -> d0_5_in -> X0_5_in -> SKIP)
+T6 = (D0_5_out -> d0_5_in -> X0_5_in -> SKIP [] (d0_5_out_6 -> SKIP; T6) [] X0_5_out_6 -> D0_6_out -> d0_6_in -> X0_6_in -> SKIP)
+T7 = (D0_1_out -> d0_1_in -> X0_1_in -> SKIP [] (d0_1_out_7 -> SKIP; T7) [] X0_1_out_7 -> D0_7_out -> d0_7_in -> X0_7_in -> SKIP)
+T8 = (D0_2_out -> d0_2_in -> X0_2_in -> SKIP [] (d0_2_out_8 -> SKIP; T8) [] X0_2_out_8 -> D0_8_out -> d0_8_in -> X0_8_in -> SKIP)
+T9 = (D0_3_out -> d0_3_in -> X0_3_in -> SKIP [] (d0_3_out_9 -> SKIP; T9) [] X0_3_out_9 -> D0_9_out -> d0_9_in -> X0_9_in -> SKIP)
+T10 = (D0_4_out -> d0_4_in -> X0_4_in -> SKIP [] (d0_4_out_10 -> SKIP; T10) [] X0_4_out_10 -> D0_10_out -> d0_10_in -> X0_10_in -> SKIP)
+
+P(0) = D0_0_in -> SKIP; D0_1_in -> SKIP; D0_2_in -> SKIP; D0_3_in -> SKIP; D0_4_in -> SKIP; D0_5_in -> SKIP; D0_6_in -> SKIP; D0_7_in -> SKIP; D0_8_in -> SKIP; D0_9_in -> SKIP; D0_10_in -> SKIP; (D1_0_out -> d1_0_in -> X1_0_in -> SKIP [] D2_0_out -> d2_0_in -> X2_0_in -> SKIP [] D3_0_out -> d3_0_in -> X3_0_in -> SKIP [] D4_0_out -> d4_0_in -> X4_0_in -> SKIP [] D5_0_out -> d5_0_in -> X5_0_in -> SKIP); S0_11_in -> SKIP; T0; S0_12_in -> SKIP; T1; S0_13_in -> SKIP; T2; S0_14_in -> SKIP; T3; S0_15_in -> SKIP; T4; S0_16_in -> SKIP; B0 -> SKIP
+P(1) = T5; S1_0_in -> SKIP; D1_0_in -> SKIP; T6; S1_2_in -> SKIP; D1_1_in -> SKIP; (D0_6_out -> d0_6_in -> X0_6_in -> SKIP); S1_4_in -> SKIP; B0 -> SKIP
+P(2) = T7; S2_0_in -> SKIP; D2_0_in -> SKIP; (D0_7_out -> d0_7_in -> X0_7_in -> SKIP); S2_2_in -> SKIP; B0 -> SKIP
+P(3) = (D0_2_out -> d0_2_in -> X0_2_in -> SKIP); S3_0_in -> SKIP; D3_0_in -> SKIP; T8; S3_2_in -> SKIP; B0 -> SKIP
+P(4) = (D0_3_out -> d0_3_in -> X0_3_in -> SKIP); S4_0_in -> SKIP; D4_0_in -> SKIP; T9; S4_2_in -> SKIP; B0 -> SKIP
+P(5) = T10; S5_0_in -> SKIP; D5_0_in -> SKIP; (D0_10_out -> d0_10_in -> SKIP); S5_2_in -> SKIP; B0 -> SKIP
+
+
+P_num = {0..5}
+Process = [|{B0}|] i:P_num @ P(i)
+
+ch(0) = SKIP [] (D0_0_in -> SKIP; (SKIP [] D0_0_out -> SKIP))
+ch(1) = SKIP [] d0_0_in -> SKIP; d0_0_out_skip_loop
+ch(2) = [|{X0_0_in}|] i:{0..0} @ X0_0(i)
+ch(3) = SKIP [] (D0_1_in -> SKIP; (SKIP [] D0_1_out -> SKIP))
+ch(4) = SKIP [] d0_1_in -> SKIP; d0_1_out_skip_loop
+ch(5) = [|{X0_1_in}|] i:{0..0} @ X0_1(i)
+ch(6) = SKIP [] (D0_2_in -> SKIP; (SKIP [] D0_2_out -> SKIP))
+ch(7) = SKIP [] d0_2_in -> SKIP; d0_2_out_skip_loop
+ch(8) = [|{X0_2_in}|] i:{0..0} @ X0_2(i)
+ch(9) = SKIP [] (D0_3_in -> SKIP; (SKIP [] D0_3_out -> SKIP))
+ch(10) = SKIP [] d0_3_in -> SKIP; d0_3_out_skip_loop
+ch(11) = [|{X0_3_in}|] i:{0..0} @ X0_3(i)
+ch(12) = SKIP [] (D0_4_in -> SKIP; (SKIP [] D0_4_out -> SKIP))
+ch(13) = SKIP [] d0_4_in -> SKIP; d0_4_out_skip_loop
+ch(14) = [|{X0_4_in}|] i:{0..0} @ X0_4(i)
+ch(15) = SKIP [] (D0_5_in -> SKIP; (SKIP [] D0_5_out -> SKIP))
+ch(16) = SKIP [] d0_5_in -> SKIP; d0_5_out_skip_loop
+ch(17) = [|{X0_5_in}|] i:{0..0} @ X0_5(i)
+ch(18) = SKIP [] (D0_6_in -> SKIP; (SKIP [] D0_6_out -> SKIP))
+ch(19) = SKIP [] d0_6_in -> SKIP
+ch(20) = SKIP [] X0_6_in -> SKIP
+ch(21) = SKIP [] (D0_7_in -> SKIP; (SKIP [] D0_7_out -> SKIP))
+ch(22) = SKIP [] d0_7_in -> SKIP
+ch(23) = SKIP [] X0_7_in -> SKIP
+ch(24) = SKIP [] (D0_8_in -> SKIP; (SKIP [] D0_8_out -> SKIP))
+ch(25) = SKIP [] d0_8_in -> SKIP
+ch(26) = SKIP [] X0_8_in -> SKIP
+ch(27) = SKIP [] (D0_9_in -> SKIP; (SKIP [] D0_9_out -> SKIP))
+ch(28) = SKIP [] d0_9_in -> SKIP
+ch(29) = SKIP [] X0_9_in -> SKIP
+ch(30) = SKIP [] (D0_10_in -> SKIP; (SKIP [] D0_10_out -> SKIP))
+ch(31) = SKIP [] d0_10_in -> SKIP
+ch(32) = SKIP [] X0_10_in -> SKIP
+ch(33) = SKIP [] (D1_0_in -> SKIP; (SKIP [] D1_0_out -> SKIP))
+ch(34) = SKIP [] d1_0_in -> SKIP; d1_0_out_skip_loop
+ch(35) = [|{X1_0_in}|] i:{0..0} @ X1_0(i)
+ch(36) = SKIP [] (D1_1_in -> SKIP; (SKIP [] D1_1_out -> SKIP))
+ch(37) = SKIP [] d1_1_in -> SKIP
+ch(38) = SKIP [] X1_1_in -> SKIP
+ch(39) = SKIP [] (D2_0_in -> SKIP; (SKIP [] D2_0_out -> SKIP))
+ch(40) = SKIP [] d2_0_in -> SKIP
+ch(41) = SKIP [] X2_0_in -> SKIP
+ch(42) = SKIP [] (D3_0_in -> SKIP; (SKIP [] D3_0_out -> SKIP))
+ch(43) = SKIP [] d3_0_in -> SKIP
+ch(44) = SKIP [] X3_0_in -> SKIP
+ch(45) = SKIP [] (D4_0_in -> SKIP; (SKIP [] D4_0_out -> SKIP))
+ch(46) = SKIP [] d4_0_in -> SKIP
+ch(47) = SKIP [] X4_0_in -> SKIP
+ch(48) = SKIP [] (D5_0_in -> SKIP; (SKIP [] D5_0_out -> SKIP))
+ch(49) = SKIP [] d5_0_in -> SKIP
+ch(50) = SKIP [] X5_0_in -> SKIP
+ch(51) = SKIP [] (S0_11_in -> SKIP; (SKIP [] S0_11_out -> SKIP))
+ch(52) = SKIP [] (S0_12_in -> SKIP; (SKIP [] S0_12_out -> SKIP))
+ch(53) = SKIP [] (S0_13_in -> SKIP; (SKIP [] S0_13_out -> SKIP))
+ch(54) = SKIP [] (S0_14_in -> SKIP; (SKIP [] S0_14_out -> SKIP))
+ch(55) = SKIP [] (S0_15_in -> SKIP; (SKIP [] S0_15_out -> SKIP))
+ch(56) = SKIP [] (S0_16_in -> SKIP; (SKIP [] S0_16_out -> SKIP))
+ch(57) = SKIP [] (S1_0_in -> SKIP; (SKIP [] S1_0_out -> SKIP))
+ch(58) = SKIP [] (S1_2_in -> SKIP; (SKIP [] S1_2_out -> SKIP))
+ch(59) = SKIP [] (S1_4_in -> SKIP; (SKIP [] S1_4_out -> SKIP))
+ch(60) = SKIP [] (S2_0_in -> SKIP; (SKIP [] S2_0_out -> SKIP))
+ch(61) = SKIP [] (S2_2_in -> SKIP; (SKIP [] S2_2_out -> SKIP))
+ch(62) = SKIP [] (S3_0_in -> SKIP; (SKIP [] S3_0_out -> SKIP))
+ch(63) = SKIP [] (S3_2_in -> SKIP; (SKIP [] S3_2_out -> SKIP))
+ch(64) = SKIP [] (S4_0_in -> SKIP; (SKIP [] S4_0_out -> SKIP))
+ch(65) = SKIP [] (S4_2_in -> SKIP; (SKIP [] S4_2_out -> SKIP))
+ch(66) = SKIP [] (S5_0_in -> SKIP; (SKIP [] S5_0_out -> SKIP))
+ch(67) = SKIP [] (S5_2_in -> SKIP; (SKIP [] S5_2_out -> SKIP))
+ch_num = {0..67}
+Channel = [|{}|] i:ch_num @ ch(i)
+
+Q = (Process [|{D0_0_in, D0_0_out, d0_0_in, X0_0_in, D0_1_in, D0_1_out, d0_1_in, X0_1_in, D0_2_in, D0_2_out, d0_2_in, X0_2_in, D0_3_in, D0_3_out, d0_3_in, X0_3_in, D0_4_in, D0_4_out, d0_4_in, X0_4_in, D0_5_in, D0_5_out, d0_5_in, X0_5_in, D0_6_in, D0_6_out, d0_6_in, X0_6_in, D0_7_in, D0_7_out, d0_7_in, X0_7_in, D0_8_in, D0_8_out, d0_8_in, X0_8_in, D0_9_in, D0_9_out, d0_9_in, X0_9_in, D0_10_in, D0_10_out, d0_10_in, X0_10_in, D1_0_in, D1_0_out, d1_0_in, X1_0_in, D1_1_in, D1_1_out, d1_1_in, X1_1_in, D2_0_in, D2_0_out, d2_0_in, X2_0_in, D3_0_in, D3_0_out, d3_0_in, X3_0_in, D4_0_in, D4_0_out, d4_0_in, X4_0_in, D5_0_in, D5_0_out, d5_0_in, X5_0_in, S0_11_in, S0_11_out, S0_12_in, S0_12_out, S0_13_in, S0_13_out, S0_14_in, S0_14_out, S0_15_in, S0_15_out, S0_16_in, S0_16_out, S1_0_in, S1_0_out, S1_2_in, S1_2_out, S1_4_in, S1_4_out, S2_0_in, S2_0_out, S2_2_in, S2_2_out, S3_0_in, S3_0_out, S3_2_in, S3_2_out, S4_0_in, S4_0_out, S4_2_in, S4_2_out, S5_0_in, S5_0_out, S5_2_in, S5_2_out, d1_0_out_1, X1_0_out_1, d0_0_out_5, X0_0_out_5, d0_5_out_6, X0_5_out_6, d0_1_out_7, X0_1_out_7, d0_2_out_8, X0_2_out_8, d0_3_out_9, X0_3_out_9, d0_4_out_10, X0_4_out_10}|] Channel); skip_loop
+
+assert Q :[deadlock free[F]]

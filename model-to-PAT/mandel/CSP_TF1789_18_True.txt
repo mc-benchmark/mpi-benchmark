@@ -1,0 +1,2 @@
+P0=ISend(1,0,59324992);ISend(1,0,59335872);ISend(1,0,59350048);ISend(1,0,59360928);ISend(1,1,59371296);Recv(*,*);Recv(*,*);Recv(*,*);Recv(*,*);Barrier;
+P1=Recv(0,*);ISend(0,0,59518336);Recv(0,*);ISend(0,1,59690752);Recv(*,*);ISend(0,2,60118816);Recv(0,*);ISend(0,3,60267936);Recv(*,*);Barrier;

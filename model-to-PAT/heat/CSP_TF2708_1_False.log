@@ -1,0 +1,20 @@
+=======================================================
+Assertion: P() deadlockfree
+********Verification Result********
+The Assertion (P() deadlockfree) is NOT valid.
+The following trace leads to a deadlock situation.
+<init -> D0_0!0 -> D1_0!0 -> D1_0?0 -> D0_1!0 -> D0_0?0 -> D1_1!0 -> D1_1?0 -> D0_2!0 -> D0_1?0 -> D1_2!0 -> D2_0!0 -> D3_0!0 -> D3_0?0 -> D2_1!0 -> D2_0?0 -> D3_1!0 -> D3_1?0 -> D2_2!0 -> D2_2?0 -> D0_3!0 -> D2_1?0 -> D3_2!0 -> D3_2?0 -> D1_3!0 -> D4_0!0 -> D5_0!0 -> D5_0?0 -> D4_1!0 -> D4_0?0 -> D5_1!0 -> D5_1?0 -> D4_2!0 -> D4_2?0 -> D2_3!0 -> D0_3?0 -> D2_4!0 -> D2_4?0 -> D4_1?0 -> D5_2!0 -> D5_2?0 -> D3_3!0 -> D1_3?0 -> D3_4!0 -> D6_0!0 -> D7_0!0 -> D7_0?0 -> D6_1!0 -> D6_0?0 -> D7_1!0 -> D7_1?0 -> D6_2!0 -> D6_2?0 -> D4_3!0 -> D2_3?0 -> D4_4!0 -> D6_1?0 -> D7_2!0 -> D7_2?0 -> D5_3!0 -> D3_3?0 -> D5_4!0 -> D8_0!0 -> D9_0!0 -> D9_0?0 -> D8_1!0 -> D8_0?0 -> D9_1!0 -> D9_1?0 -> D8_2!0 -> D8_2?0 -> D6_3!0 -> D4_3?0 -> D6_4!0 -> D0_2?0 -> D8_3!0 -> D6_3?0 -> D8_4!0 -> D8_1?0 -> D9_2!0 -> D9_2?0 -> D7_3!0 -> D5_3?0 -> D7_4!0 -> D1_2?0 -> D9_3!0 -> D9_3?0 -> D1_4!0 -> D1_4?0 -> D7_3?0 -> D9_4!0>
+
+********Verification Setting********
+Admissible Behavior: All
+Search Engine: First Witness Trace using Depth First Search
+System Abstraction: False
+
+
+********Verification Statistics********
+Visited States:422
+Total Transitions:421
+Time Used:0.0255231s
+Estimated Memory Used:8530.168KB
+
+

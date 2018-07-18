@@ -1,0 +1,18 @@
+=======================================================
+Assertion: P() deadlockfree
+********Verification Result********
+The Assertion (P() deadlockfree) is VALID.
+
+********Verification Setting********
+Admissible Behavior: All
+Search Engine: First Witness Trace using Depth First Search
+System Abstraction: False
+
+
+********Verification Statistics********
+Visited States:1674
+Total Transitions:7265
+Time Used:0.0874414s
+Estimated Memory Used:8848.656KB
+
+

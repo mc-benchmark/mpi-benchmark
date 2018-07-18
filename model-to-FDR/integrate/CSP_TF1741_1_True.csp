@@ -1,0 +1,37 @@
+channel D0_0_in
+channel D0_0_out
+channel d0_0_in
+channel X0_0_in
+channel D1_0_in
+channel D1_0_out
+channel d1_0_in
+channel X1_0_in
+channel S0_1_in
+channel S0_1_out
+channel S1_0_in
+channel S1_0_out
+
+skip_loop = SKIP; skip_loop
+
+
+P(0) = D0_0_in -> SKIP; (D1_0_out -> d1_0_in -> X1_0_in -> SKIP); S0_1_in -> SKIP
+P(1) = (D0_0_out -> d0_0_in -> X0_0_in -> SKIP); S1_0_in -> SKIP; D1_0_in -> SKIP
+
+
+P_num = {0..1}
+Process = [|{}|] i:P_num @ P(i)
+
+ch(0) = SKIP [] (D0_0_in -> SKIP; (SKIP [] D0_0_out -> SKIP))
+ch(1) = SKIP [] d0_0_in -> SKIP
+ch(2) = SKIP [] X0_0_in -> SKIP
+ch(3) = SKIP [] (D1_0_in -> SKIP; (SKIP [] D1_0_out -> SKIP))
+ch(4) = SKIP [] d1_0_in -> SKIP
+ch(5) = SKIP [] X1_0_in -> SKIP
+ch(6) = SKIP [] (S0_1_in -> SKIP; (SKIP [] S0_1_out -> SKIP))
+ch(7) = SKIP [] (S1_0_in -> SKIP; (SKIP [] S1_0_out -> SKIP))
+ch_num = {0..7}
+Channel = [|{}|] i:ch_num @ ch(i)
+
+Q = (Process [|{D0_0_in, D0_0_out, d0_0_in, X0_0_in, D1_0_in, D1_0_out, d1_0_in, X1_0_in, S0_1_in, S0_1_out, S1_0_in, S1_0_out}|] Channel); skip_loop
+
+assert Q :[deadlock free[F]]

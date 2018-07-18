@@ -1,0 +1,9 @@
+channel D0_0 1;
+channel D0_1 1;
+channel D0_2 1;
+channel C1_0 0;
+channel C1_1 0;
+P0=(D0_0!0->Skip); (D0_1!0->Skip); (C1_0?0->Skip); (C1_1?0->Skip); (D0_2!0->Skip); 
+P1=(D0_0?0->Skip); (D0_1?0->Skip); (C1_0!0->Skip); (C1_1!0->Skip); (D0_0?0->Skip [] [call(cempty,D0_0)]D0_2?0->Skip);
+P=P0||P1;
+#assert P deadlockfree;

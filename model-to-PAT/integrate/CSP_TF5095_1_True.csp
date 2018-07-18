@@ -1,0 +1,18 @@
+channel D0_0 1;
+channel D0_1 1;
+channel D0_2 1;
+channel D0_3 1;
+channel D0_4 1;
+channel D1_0 1;
+channel D2_0 1;
+channel D3_0 1;
+channel D4_0 1;
+channel D5_0 1;
+P0=(D0_0!0->Skip); (D0_1!0->Skip); (D0_2!0->Skip); (D0_3!0->Skip); (D0_4!0->Skip); (D1_0?0->Skip [] D2_0?0->Skip [] D3_0?0->Skip [] D4_0?0->Skip [] D5_0?0->Skip); (D1_0?0->Skip [] D2_0?0->Skip [] D3_0?0->Skip [] D4_0?0->Skip [] D5_0?0->Skip); (D1_0?0->Skip [] D2_0?0->Skip [] D3_0?0->Skip [] D4_0?0->Skip [] D5_0?0->Skip); (D1_0?0->Skip [] D2_0?0->Skip [] D3_0?0->Skip [] D4_0?0->Skip [] D5_0?0->Skip); (D1_0?0->Skip [] D2_0?0->Skip [] D3_0?0->Skip [] D4_0?0->Skip [] D5_0?0->Skip);
+P1=(D0_0?0->Skip); (D1_0!0->Skip); 
+P2=(D0_1?0->Skip); (D2_0!0->Skip); 
+P3=(D0_2?0->Skip); (D3_0!0->Skip); 
+P4=(D0_3?0->Skip); (D4_0!0->Skip); 
+P5=(D0_4?0->Skip); (D5_0!0->Skip); 
+P=P0||P1||P2||P3||P4||P5;
+#assert P deadlockfree;

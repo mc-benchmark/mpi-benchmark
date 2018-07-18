@@ -1,0 +1,6 @@
+channel D0_0 1;
+channel D1_0 1;
+P0=(D0_0!0->Skip); (D1_0?0->Skip);
+P1=(D0_0?0->Skip); (D1_0!0->Skip); 
+P=P0||P1;
+#assert P deadlockfree;

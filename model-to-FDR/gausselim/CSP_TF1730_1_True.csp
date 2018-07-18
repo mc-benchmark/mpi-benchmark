@@ -1,0 +1,115 @@
+channel D0_0_in
+channel D0_0_out
+channel d0_0_in
+channel X0_0_in
+channel D0_1_in
+channel D0_1_out
+channel d0_1_in
+channel X0_1_in
+channel D0_2_in
+channel D0_2_out
+channel d0_2_in
+channel X0_2_in
+channel D0_3_in
+channel D0_3_out
+channel d0_3_in
+channel X0_3_in
+channel D0_4_in
+channel D0_4_out
+channel d0_4_in
+channel X0_4_in
+channel D0_5_in
+channel D0_5_out
+channel d0_5_in
+channel X0_5_in
+channel D1_0_in
+channel D1_0_out
+channel d1_0_in
+channel X1_0_in
+channel D1_1_in
+channel D1_1_out
+channel d1_1_in
+channel X1_1_in
+channel D1_2_in
+channel D1_2_out
+channel d1_2_in
+channel X1_2_in
+channel S0_5_in
+channel S0_5_out
+channel S1_2_in
+channel S1_2_out
+channel S1_10_in
+channel S1_10_out
+channel S2_2_in
+channel S2_2_out
+channel S2_3_in
+channel S2_3_out
+channel S2_8_in
+channel S2_8_out
+channel S3_2_in
+channel S3_2_out
+channel S3_3_in
+channel S3_3_out
+channel S3_8_in
+channel S3_8_out
+channel B0
+channel B1
+channel B2
+channel B3
+channel B4
+channel B5
+
+skip_loop = SKIP; skip_loop
+
+
+P(0) = B5 -> SKIP; B4 -> SKIP; D0_0_in -> SKIP; D0_1_in -> SKIP; D0_2_in -> SKIP; (D1_0_out -> d1_0_in -> X1_0_in -> SKIP); S0_5_in -> SKIP; B3 -> SKIP; B2 -> SKIP; B1 -> SKIP; B0 -> SKIP; D0_3_in -> SKIP; D0_4_in -> SKIP; D0_5_in -> SKIP
+P(1) = B5 -> SKIP; B4 -> SKIP; (D0_0_out -> d0_0_in -> X0_0_in -> SKIP); S1_2_in -> SKIP; D1_0_in -> SKIP; D1_1_in -> SKIP; D1_2_in -> SKIP; B3 -> SKIP; B2 -> SKIP; B1 -> SKIP; B0 -> SKIP; (D0_3_out -> d0_3_in -> X0_3_in -> SKIP); S1_10_in -> SKIP
+P(2) = B5 -> SKIP; B4 -> SKIP; (D0_1_out -> d0_1_in -> X0_1_in -> SKIP [] D1_1_out -> d1_1_in -> X1_1_in -> SKIP); S2_2_in -> SKIP; (D0_1_out -> d0_1_in -> X0_1_in -> SKIP [] D1_1_out -> d1_1_in -> X1_1_in -> SKIP); S2_3_in -> SKIP; B3 -> SKIP; B2 -> SKIP; B1 -> SKIP; B0 -> SKIP; (D0_4_out -> d0_4_in -> X0_4_in -> SKIP); S2_8_in -> SKIP
+P(3) = B5 -> SKIP; B4 -> SKIP; (D0_2_out -> d0_2_in -> X0_2_in -> SKIP [] D1_2_out -> d1_2_in -> X1_2_in -> SKIP); S3_2_in -> SKIP; (D0_2_out -> d0_2_in -> X0_2_in -> SKIP [] D1_2_out -> d1_2_in -> X1_2_in -> SKIP); S3_3_in -> SKIP; B3 -> SKIP; B2 -> SKIP; B1 -> SKIP; B0 -> SKIP; (D0_5_out -> d0_5_in -> X0_5_in -> SKIP); S3_8_in -> SKIP
+
+
+P_num = {0..3}
+Process = [|{B0,B1,B2,B3,B4,B5}|] i:P_num @ P(i)
+
+ch(0) = SKIP [] (D0_0_in -> SKIP; (SKIP [] D0_0_out -> SKIP))
+ch(1) = SKIP [] d0_0_in -> SKIP
+ch(2) = SKIP [] X0_0_in -> SKIP
+ch(3) = SKIP [] (D0_1_in -> SKIP; (SKIP [] D0_1_out -> SKIP))
+ch(4) = SKIP [] d0_1_in -> SKIP
+ch(5) = SKIP [] X0_1_in -> SKIP
+ch(6) = SKIP [] (D0_2_in -> SKIP; (SKIP [] D0_2_out -> SKIP))
+ch(7) = SKIP [] d0_2_in -> SKIP
+ch(8) = SKIP [] X0_2_in -> SKIP
+ch(9) = SKIP [] (D0_3_in -> SKIP; (SKIP [] D0_3_out -> SKIP))
+ch(10) = SKIP [] d0_3_in -> SKIP
+ch(11) = SKIP [] X0_3_in -> SKIP
+ch(12) = SKIP [] (D0_4_in -> SKIP; (SKIP [] D0_4_out -> SKIP))
+ch(13) = SKIP [] d0_4_in -> SKIP
+ch(14) = SKIP [] X0_4_in -> SKIP
+ch(15) = SKIP [] (D0_5_in -> SKIP; (SKIP [] D0_5_out -> SKIP))
+ch(16) = SKIP [] d0_5_in -> SKIP
+ch(17) = SKIP [] X0_5_in -> SKIP
+ch(18) = SKIP [] (D1_0_in -> SKIP; (SKIP [] D1_0_out -> SKIP))
+ch(19) = SKIP [] d1_0_in -> SKIP
+ch(20) = SKIP [] X1_0_in -> SKIP
+ch(21) = SKIP [] (D1_1_in -> SKIP; (SKIP [] D1_1_out -> SKIP))
+ch(22) = SKIP [] d1_1_in -> SKIP
+ch(23) = SKIP [] X1_1_in -> SKIP
+ch(24) = SKIP [] (D1_2_in -> SKIP; (SKIP [] D1_2_out -> SKIP))
+ch(25) = SKIP [] d1_2_in -> SKIP
+ch(26) = SKIP [] X1_2_in -> SKIP
+ch(27) = SKIP [] (S0_5_in -> SKIP; (SKIP [] S0_5_out -> SKIP))
+ch(28) = SKIP [] (S1_2_in -> SKIP; (SKIP [] S1_2_out -> SKIP))
+ch(29) = SKIP [] (S1_10_in -> SKIP; (SKIP [] S1_10_out -> SKIP))
+ch(30) = SKIP [] (S2_2_in -> SKIP; (SKIP [] S2_2_out -> SKIP))
+ch(31) = SKIP [] (S2_3_in -> SKIP; (SKIP [] S2_3_out -> SKIP))
+ch(32) = SKIP [] (S2_8_in -> SKIP; (SKIP [] S2_8_out -> SKIP))
+ch(33) = SKIP [] (S3_2_in -> SKIP; (SKIP [] S3_2_out -> SKIP))
+ch(34) = SKIP [] (S3_3_in -> SKIP; (SKIP [] S3_3_out -> SKIP))
+ch(35) = SKIP [] (S3_8_in -> SKIP; (SKIP [] S3_8_out -> SKIP))
+ch_num = {0..35}
+Channel = [|{}|] i:ch_num @ ch(i)
+
+Q = (Process [|{D0_0_in, D0_0_out, d0_0_in, X0_0_in, D0_1_in, D0_1_out, d0_1_in, X0_1_in, D0_2_in, D0_2_out, d0_2_in, X0_2_in, D0_3_in, D0_3_out, d0_3_in, X0_3_in, D0_4_in, D0_4_out, d0_4_in, X0_4_in, D0_5_in, D0_5_out, d0_5_in, X0_5_in, D1_0_in, D1_0_out, d1_0_in, X1_0_in, D1_1_in, D1_1_out, d1_1_in, X1_1_in, D1_2_in, D1_2_out, d1_2_in, X1_2_in, S0_5_in, S0_5_out, S1_2_in, S1_2_out, S1_10_in, S1_10_out, S2_2_in, S2_2_out, S2_3_in, S2_3_out, S2_8_in, S2_8_out, S3_2_in, S3_2_out, S3_3_in, S3_3_out, S3_8_in, S3_8_out}|] Channel); skip_loop
+
+assert Q :[deadlock free[F]]
