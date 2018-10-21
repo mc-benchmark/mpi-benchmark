@@ -1,0 +1,4 @@
+P0=Recv(*,*);Recv(*,*);Recv(*,*);Recv(*,*);Recv(*,*);Recv(*,*);Barrier;ISend(2,0,554635424);Recv(2,0);ISend(2,0,555066720);Recv(2,0);ISend(1,0,555820672);Recv(1,0);ISend(1,0,556399488);Recv(1,0);
+P1=ISend(0,0,553104480);ISend(0,1,553110432);Barrier;ISend(3,0,554661280);Recv(3,0);ISend(3,0,555215616);Recv(3,0);ISend(0,0,555581568);Recv(0,0);ISend(0,0,556425216);Recv(0,0);
+P2=ISend(0,0,553145280);ISend(0,1,553151232);Barrier;ISend(0,0,554687136);Recv(0,0);ISend(0,0,555241984);Recv(0,0);ISend(3,0,555846400);Recv(3,0);ISend(3,0,556279296);Recv(3,0);
+P3=ISend(0,0,552760032);ISend(0,1,552765984);Barrier;ISend(1,0,554600800);Recv(1,0);ISend(1,0,555268352);Recv(1,0);ISend(2,0,555726208);Recv(2,0);ISend(2,0,556305024);Recv(2,0);

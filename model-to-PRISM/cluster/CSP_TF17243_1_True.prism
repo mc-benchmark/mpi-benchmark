@@ -1,0 +1,54 @@
+mdp
+
+global D0_0 : [0..2] init 0;
+global D0_1 : [0..2] init 0;
+global D0_2 : [0..2] init 0;
+global C1_0 : [0..2] init 0;
+global C1_0_a : bool init true;
+global C1_0_b : bool init true;
+global C1_1 : [0..2] init 0;
+global C1_1_a : bool init true;
+global C1_1_b : bool init true;
+global pc0 : [1..8] init 1;
+global pc1 : [1..9] init 1;
+
+
+module P0
+   [] pc0 = 6 & C1_1_b = true -> (C1_1_b'=false);
+   [] pc0 = 5 & C1_1 = 1 -> (pc0'=6);
+   [] pc0 = 3 & C1_0 = 1 -> (pc0'=4);
+   [] pc0 = 4 & C1_0_b = true -> (C1_0_b'=false);
+   [] pc0 = 6 & C1_1 = 2 & C1_1_a = false & C1_1_b = false -> (pc0'=5) ;
+   [] pc0 = 6 & C1_1 = 1 & C1_1_a = false & C1_1_b = false -> (pc0'=7) & (C1_1'=2) ;
+   [] pc0 = 4 & C1_0 = 1 & C1_0_a = false & C1_0_b = false -> (pc0'=5) & (C1_0'=2) ;
+   [] pc0 = 2 & D0_1 = 0 -> (pc0'=3) & (D0_1'=1) ;
+   [] pc0 = 7 & D0_2 = 0 -> (pc0'=8) & (D0_2'=1) ;
+   [] pc0 = 1 & D0_0 = 0 -> (pc0'=2) & (D0_0'=1) ;
+   [] pc0 = 4 & C1_0 = 2 & C1_0_a = false & C1_0_b = false -> (pc0'=3) ;
+   [] pc0 = 8 & pc1 = 9 -> (pc0'=1) & (pc1'=1) & (D0_0'=0) & (D0_1'=0) & (D0_2'=0) & (C1_0'=0) & (C1_0_a'=true) & (C1_0_b'=true) & (C1_1'=0) & (C1_1_a'=true) & (C1_1_b'=true);
+endmodule
+
+
+
+module P1
+   [] pc1 = 7 & D0_0 = 1 -> (pc1'=9) & (D0_0'=2) ;
+   [] pc1 = 5 & C1_1 = 0 -> (C1_1'=1);
+   [] pc1 = 8 & D0_0 = 2 & D0_2 = 1 -> (pc1'=9) & (D0_2'=2) ;
+   [] pc1 = 6 & D0_0 != 1 & D0_2 = 1 -> (pc1'=8);
+   [] pc1 = 2 & D0_0 = 1 -> (pc1'=3) & (D0_0'=2) ;
+   [] pc1 = 4 & C1_0 = 2 & C1_0_a = false & C1_0_b = false -> (pc1'=5) ;
+   [] pc1 = 1 & D0_0 = 1 -> (pc1'=2);
+   [] pc1 = 6 & D0_0 = 1 & D0_2 != 1 -> (pc1'=7);
+   [] pc1 = 5 & C1_1 = 2 & C1_1_a = false & C1_1_b = false -> (pc1'=6) ;
+   [] pc1 = 4 & C1_0_a = true -> (C1_0_a'=false);
+   [] pc1 = 8 & D0_0 = 1 -> (pc1'=7) ;
+   [] pc1 = 5 & C1_1_a = true -> (C1_1_a'=false);
+   [] pc1 = 7 & D0_0 = 2 -> (pc1'=6);
+   [] pc1 = 7 & D0_0 = 2 -> (pc1'=8);
+   [] pc1 = 6 & D0_0 = 1 & D0_2 = 1 -> (pc1'=7);
+   [] pc1 = 6 & D0_0 = 1 & D0_2 = 1 -> (pc1'= 8);
+   [] pc1 = 4 & C1_0 = 0 -> (C1_0'=1);
+   [] pc1 = 3 & D0_1 = 1 -> (pc1'=4) & (D0_1'=2) ;
+   [] pc1 = 2 & D0_0 = 2 -> (pc1'=1) ;
+   [] pc0 = 8 & pc1 = 9 -> (pc0'=1) & (pc1'=1) & (D0_0'=0) & (D0_1'=0) & (D0_2'=0) & (C1_0'=0) & (C1_0_a'=true) & (C1_0_b'=true) & (C1_1'=0) & (C1_1_a'=true) & (C1_1_b'=true);
+endmodule
